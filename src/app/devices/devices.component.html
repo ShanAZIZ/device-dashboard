@@ -1,1 +1,29 @@
-<p>devices works!</p>
+<div>
+  <h2>Devices</h2>
+  <p-button label="Add" />
+  <div>
+    @if (devices$ | async; as devices) {
+      <p-table [value]="devices" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Buying date</th>
+            <th>Buying price</th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-device>
+          <tr>
+            <td>{{ device.name }}</td>
+            <td>{{ device.buyingDate }}</td>
+            <td>{{ device.buyingPrice }}</td>
+            <td class="actions">
+              <p-button label="Edit" />
+              <p-button label="Delete" severity="danger" />
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    }
+  </div>
+</div>
