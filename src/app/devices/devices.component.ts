@@ -6,6 +6,7 @@ import { DeviceService } from './device.service';
 import { AsyncPipe } from '@angular/common';
 import { Button } from 'primeng/button';
 
+// Gérer la pagination, les erreurs d'appel api, loader ?
 @Component({
   selector: 'app-devices',
   standalone: true,
